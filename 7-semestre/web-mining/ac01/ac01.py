@@ -30,17 +30,19 @@ def pegarvendas():
 
 
 # exercicio 2
-@app.route('/casa/')
+@app.route('/casa/<timeteste>')
 def pegarTimesCasa():
     dados = pd.read_csv('./futebol.csv', sep=";")
 
     # implementação para receber como parâmetro, bonus
-    # list_times = []
-    # list_times.append(request.args.get('time1'))
-    # list_times.append(request.args.get('time2'))
-    # list_times.append(request.args.get('time3'))
+    list_times = []
+    list_times.append(request.args.get('time1') if request.args.get('time1') is not None else  "Arsenal Tula")
+    list_times.append(request.args.get('time2'))
+    list_times.append(request.args.get('time3'))
 
-    list_times = ["Olimpia", "Guaireña", "Millwall"]
+    print(request.view_args['timeteste'])
+
+    #list_times = ["Olimpia", "Guaireña", "Millwall"]
 
     list_dados = {}
     for time in list_times:
