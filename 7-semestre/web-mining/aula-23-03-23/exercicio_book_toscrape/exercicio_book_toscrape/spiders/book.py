@@ -8,7 +8,9 @@ import scrapy
 class BookSpider(scrapy.Spider):
     name = "book"
     allowed_domains = ["books.toscrape.com"]
-    start_urls = ["http://books.toscrape.com/catalogue/category/books/romance_8/index.html"]
+    start_urls = ["http://books.toscrape.com/catalogue/category/books/romance_8/index.html", \
+                   "http://books.toscrape.com/catalogue/category/books/travel_2/index.html", \
+                    "http://books.toscrape.com/catalogue/category/books/sequential-art_5/index.html"]
 
     def parse(self, response):
         categoria = response.css('h1::text').get()
