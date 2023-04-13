@@ -48,7 +48,6 @@ plt.ylabel("Qtde de Pixels")
 plt.hist(img.ravel(), 256, [0,256])
 plt.xlim([0, 256])
 plt.show()
-cv2.waitKey(0)
 
 
 
