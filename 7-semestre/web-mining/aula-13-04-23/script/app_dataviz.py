@@ -59,4 +59,37 @@ if escolha_do_indicador == 'temporal':
     st.line_chart(df["gols"])
 
 else:
-    print("escolheu o outro meu nobrer")
+    stock = df['home_team_name'].drop_duplicates()
+    stock_choice = st.sidebar.selectbox("escolha um time", stock)
+
+    start_date = st.sidebar.text_input("Digite uma data de inicio", min_data)
+
+    end_date = st.sidebar.text_input("Digite uma data máxima", max_data)
+
+    start = int(start_date)
+    end = int(end_date)
+
+    if (start > end):
+        st.error("data inicio deve ser menor que fim")
+
+    
+    df = df[(df["home_team_name"] == stock_choice) & (df["anomes"] >= start) & (df["anomes"] <=end)]
+    df= df.set_index((df["anomes"]).astype(str))
+
+
+    df2 = df.copy()
+    df2["ano"] = (df2.anomes/100)
+    df2["ano"] = df2["ano"].astype(str)
+
+    def grafica_ploty_scatter(base):
+        fig = px.scatter(base, x = "ano", y="gols", color="home_team_name")
+        return st.plotly_chart(fig)
+
+    def grafica_ploty_quarter_box(base):
+        fig = px.scatter(base, x = "ano", y="gols", color="home_team_name")
+        return st.plotly_chart(fig)
+    
+
+    grafica_ploty_scatter(df2)
+
+
