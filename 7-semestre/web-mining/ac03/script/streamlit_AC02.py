@@ -1,16 +1,20 @@
 import streamlit as st
 import pandas as pd
-import altair as alt
-from datetime import date
 import plotly.express as px
-import math
+import seaborn as sns
+import matplotlib.pyplot as plt
 
 
 # nome da aplicação
 
 st.write(
     '''
-    **Jogos loja Nuuvem**
+    # Jogos loja Nuuvem - AC03 Web Mining
+
+    * Nome: Lucas da Silva Santos
+    * RA: 1904209
+
+    Seleciona a análise pelos preços com desconto ou análise de outlier e intervalo de preços
     '''
 )
 
@@ -114,8 +118,7 @@ if(escolha_do_indicador == indicador[1]):
     f'''
     Foi identificado que a maioria dos jogos com menos descontos e que atingiram preços muito altos, são lançamentos dos ultimos 2 anos,
     chegando a valores acima de R\$ 200,00 mesmo com descontos aplicados, com média de valores de R\$ {media_mais_caros:.2f}
-    
-
+        
     Nesses valores, foi identificado um número maior de jogos abaixo de 50 reais, conforme o gráfico de contagem abaixo:
     ''')
 
