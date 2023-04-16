@@ -82,11 +82,11 @@ else:
     df2["ano"] = df2["ano"].astype(str)
 
     def grafica_ploty_scatter(base):
-        fig = px.scatter(base, x = "ano", y="gols", color="home_team_name")
+        fig = px.scatter(base, x = "ano", y="gols", color="home_ppg")
         return st.plotly_chart(fig)
 
-    def grafica_ploty_quarter_box(base):
-        fig = px.scatter(base, x = "ano", y="gols", color="home_team_name")
+    def grafica_ploty_box_box(base):
+        fig = px.box(base.gols)
         return st.plotly_chart(fig)
     
 
