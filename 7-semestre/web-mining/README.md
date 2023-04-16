@@ -16,3 +16,8 @@ Abaixo o comando para definir qual enviroment python será utilizado
  source <caminho-onde-foi-criado-enviroment-python>/<nome-do-ambiente>/bin/activate
 ```
 
+execução script streamlit
+
+```zsh
+streamlit run <nome_app_script>
+```
