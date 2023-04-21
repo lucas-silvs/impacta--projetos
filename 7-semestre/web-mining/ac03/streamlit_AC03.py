@@ -22,7 +22,7 @@ st.write(
     '''
 )
 
-df = pd.read_csv('./1_bases_tratadas/base_tratada.csv', sep=',')
+df = pd.read_csv('7-semestre/web-mining/ac03/1_bases_tratadas/base_tratada.csv', sep=',')
 
 df_data = df['preco']
 
