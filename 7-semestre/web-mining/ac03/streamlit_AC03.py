@@ -22,7 +22,7 @@ st.write(
     '''
 )
 
-df = pd.read_csv('7-semestre/web-mining/ac03/1_bases_tratadas/base_tratada.csv', sep=',')
+df = pd.read_csv('1_bases_tratadas/base_tratada.csv', sep=',')
 
 df_data = df['preco']
 
@@ -136,14 +136,7 @@ if(escolha_do_indicador == indicador[1]):
     df_ajustado["nome"] = df["nome"]
     grafico_plotly_scatter(df_ajustado, "porcentagem_desconto","preco_original")
 
-
-    fig = px.pie(df_ajustado, values="preco", names="intervalo_preco", title='preços dos jogos em intervalos')
-    teste  = st.plotly_chart(fig)
-    # grafico_plotly_pie(df_ajustado, "intervalo_preco")
-
-    st.write('''
-    Baseado no Gráfico de pizza, foi identificado que o maior intervalo de desconto atual é o {} com %{} do total.
-    ''')
+    grafico_plotly_pie(df_ajustado, "intervalo_preco")
 
     grafico_plotly_heatmap(df_ajustado, "preco", "porcentagem_desconto")
 
