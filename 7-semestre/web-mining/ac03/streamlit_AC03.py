@@ -22,11 +22,7 @@ st.write(
     '''
 )
 
-def get_data():
-    path = '1_bases_tratadas/base_tratada.csv'
-    return pd.read_csv(path, sep=',')
-
-df = get_data()
+df = pd.read_csv('1_bases_tratadas/base_tratada.csv', sep=',')
 
 df_data = df['preco']
 
